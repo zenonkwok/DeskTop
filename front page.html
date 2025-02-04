@@ -55,6 +55,7 @@
             padding: 10px;
             font-size: 20px;
             text-decoration: none;
+            color: black;
             display: block;
         }
         .menu a:hover {
@@ -70,6 +71,11 @@
         }
         .overlay.active {
             display: block;
+        }
+        .view-all {
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
         }
         .search-bar {
             display: none;
@@ -87,36 +93,39 @@
             border: none;
             border-radius: 5px;
         }
-        .deals-section {
-            background-color: #5a1914;
-            padding: 20px;
+        .section {
+            padding: 30px;
             text-align: center;
         }
-        .deals-header {
+        .header {
             display: flex;
             justify-content: space-between;
-            align-items: absolute ;
+            align-items: center;
             padding: 20px;
         }
-        .deals-header h2 {
+        .header h2 {
             margin: 0;
         }
-        .view-all {
-            color: red;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .deals-container {
+        /* Horizontal Scroll Styling */
+        .container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 10px;
+            padding: 10px;
+            scroll-behavior: smooth;
         }
-        .deal-item img {
-            width: 150px;
-            height: auto;
+        .item {
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+        .item img {
+            width: 200px;
+            height: 200px;
             border-radius: 10px;
+        }
+        /* Hide Scrollbar */
+        .container::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
@@ -146,23 +155,126 @@
     </div>
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-    <div class="deals-section">
-        <div class="deals-header">
+    <div class="section" id="deals-section">
+        <div class="header" id="deals-header">
             <h2>Deals</h2>
             <a href="#" class="view-all">View All</a>
         </div>
-        <div class="deals-container">
-            <div class="deal-item">
+        <div class="container" id="deals-container">
+            <div class="item" id="deals-item">
                 <img src="bird-8788491_1280.jpg" alt="Keyboard 1">
             </div>
-            <div class="deal-item">
+            <div class="item" id="deals-item">
                 <img src="picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg" alt="Keyboard 2">
             </div>
-            <div class="deal-item">
+            <div class="item" id="deals-item">
                 <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 3">
+            </div>
+            <div class="item" id="deals-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 4">
+            </div>
+            <div class="item" id="deals-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 5">
             </div>
         </div>
     </div>
+    <div class="section" id="mouse-section">
+        <div class="header" id="mouse-header">
+            <h2>Mouse</h2>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="container" id="mouse-container">
+            <div class="item" id="mouse-item">
+                <img src="bird-8788491_1280.jpg" alt="Keyboard 1">
+            </div>
+            <div class="item" id="mouse-item">
+                <img src="picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg" alt="Keyboard 2">
+            </div>
+            <div class="item" id="mouse-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 3">
+            </div>
+            <div class="item" id="mouse-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 4">
+            </div>
+            <div class="item" id="mouse-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 5">
+            </div>
+        </div>
+        
+    </div>
+    <div class="section" id="key-section">
+        <div class="header" id="key-header">
+            <h2>Keyboard</h2>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="container" id="key-container">
+            <div class="item" id="key-item">
+                <img src="bird-8788491_1280.jpg" alt="Keyboard 1">
+            </div>
+            <div class="item" id="key-item">
+                <img src="picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg" alt="Keyboard 2">
+            </div>
+            <div class="item" id="key-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 3">
+            </div>
+            <div class="item" id="key-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 4">
+            </div>
+            <div class="item" id="key-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 5">
+            </div>
+        </div>
+        
+    </div>
+    <div class="section" id="head-section">
+        <div class="header" id="head-header">
+            <h2>Headphone</h2>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="container" id="head-container">
+            <div class="item" id="head-item">
+                <img src="bird-8788491_1280.jpg" alt="Keyboard 1">
+            </div>
+            <div class="item" id="head-item">
+                <img src="picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg" alt="Keyboard 2">
+            </div>
+            <div class="item" id="head-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 3">
+            </div>
+            <div class="item" id="head-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 4">
+            </div>
+            <div class="item" id="head-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 5">
+            </div>
+        </div>
+        
+    </div>
+    <div class="section" id="mic-section">
+        <div class="header" id="mic-header">
+            <h2>Microphone</h2>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="container" id="mic-container">
+            <div class="item" id="mic-item">
+                <img src="bird-8788491_1280.jpg" alt="Keyboard 1">
+            </div>
+            <div class="item" id="mic-item">
+                <img src="picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg" alt="Keyboard 2">
+            </div>
+            <div class="item" id="mic-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 3">
+            </div>
+            <div class="item" id="mic-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 4">
+            </div>
+            <div class="item" id="mic-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 5">
+            </div>
+        </div>
+        
+    </div>
+    
 
     <script>
         function toggleMenu() {
@@ -174,6 +286,17 @@
             const searchBar = document.getElementById('search-bar');
             searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
         }
+
+        // Enable horizontal scroll using mouse wheel
+        const containers = document.querySelectorAll(".container");
+
+// Loop through each container and add the scroll event listener
+        containers.forEach(container => {
+        container.addEventListener("wheel", (evt) => {
+        evt.preventDefault(); // Prevent default vertical scrolling
+        container.scrollLeft += evt.deltaY * 1.5; // Enable horizontal scrolling
+        });
+});
     </script>
 </body>
 </html>
