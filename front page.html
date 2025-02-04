@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,36 +12,51 @@
             color: white;
         }
         .navbar {
+            position: relative;
+            background-color: #d34524;
+            padding: 15px;
+            text-align: center;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #d34524;
-            padding: 15px;
         }
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
         }
+        .logo {
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .icons {
+            margin-left: auto;
+            font-size: 30px;
+            display: flex;
+            gap: 20px;
+        }
         .menu {
-            position: fixed;
-            top: 0;
+            position: absolute;
+            top: 60px;
             left: 0;
-            width: 80%;
-            height: 100%;
+            width: 100%;
             background-color: #f3d59b;
-            transform: translateX(-100%);
-            transition: 0.3s;
-            padding: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
         }
         .menu.active {
-            transform: translateX(0);
+            max-height: 400px;
         }
         .menu a {
-            display: block;
             padding: 10px;
             font-size: 20px;
             text-decoration: none;
             color: black;
+            display: block;
         }
         .menu a:hover {
             background-color: #e8a064;
@@ -58,19 +73,70 @@
         .overlay.active {
             display: block;
         }
+        .search-bar {
+            display: none;
+            background-color: #d34524;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        .deals-section {
+            background-color: #5a1914;
+            padding: 20px;
+            text-align: center;
+        }
+        .deals-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .deals-header h2 {
+            margin: 0;
+        }
+        .view-all {
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .deals-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .deal-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
         <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
         <span class="logo">DeskTop</span>
-        <div>
-            <span>🔍</span>
+        <div class="icons">
+            <span onclick="toggleSearch()">🔍</span>
             <span>👤</span>
             <span>🛒</span>
         </div>
     </div>
-    
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+
     <div class="menu" id="menu">
         <a href="#">Home</a>
         <a href="#">Deal</a>
@@ -81,11 +147,34 @@
         <a href="#">Contact Us</a>
     </div>
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-    
+
+    <div class="deals-section">
+        <div class="deals-header">
+            <h2>Deals</h2>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="deals-container">
+            <div class="deal-item">
+                <img src="bird-8788491_1280.jpg" alt="Keyboard 1">
+            </div>
+            <div class="deal-item">
+                <img src="picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg" alt="Keyboard 2">
+            </div>
+            <div class="deal-item">
+                <img src="the-sun-shines-on-the-mountains-and-flowers-in-the-foreground-ai-generated-photo.jpg" alt="Keyboard 3">
+            </div>
+        </div>
+    </div>
+
     <script>
         function toggleMenu() {
             document.getElementById('menu').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
+        }
+
+        function toggleSearch() {
+            const searchBar = document.getElementById('search-bar');
+            searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
