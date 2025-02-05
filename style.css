@@ -129,6 +129,7 @@ body {
     background-color: #4d1c1c;
     color: white;
     text-align: center;
+    padding-bottom: 90px;
 }
 .container1 {
     max-width: 400px;
@@ -137,6 +138,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     margin-top: 90px;
+    
+    
 }
 input {
     width: 90%;
@@ -163,3 +166,5 @@ input {
     color: white;
     margin-top: 5px;
 }
+
+/* sign up */
