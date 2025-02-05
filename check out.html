@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Receipt</title>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+  <style>
+    /* Global resets */
+    * {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background and centering */
+    body {
+      background: #8B0000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: scaleUp 0.5s ease-in-out;
+    }
+
+    /* Header */
+    .header {
+      color: #27ae60;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* Checkmark Animation */
+    .checkmark {
+      font-size: 60px;
+      color: #27ae60;
+      margin-bottom: 15px;
+      animation: popUp 0.6s ease-in-out;
+    }
+
+    /* Content styling */
+    .content {
+      margin-top: 15px;
+      border-top: 2px dashed #ddd;
+      padding-top: 20px;
+      text-align: left;
+    }
+
+    .content p {
+      font-size: 16px;
+      margin: 10px 0;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    /* Total price */
+    .total {
+      font-size: 26px;
+      font-weight: bold;
+      color: #2C3E50;
+      margin-top: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* Payment Information */
+    .payment-info {
+      background: #F4F4F4;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #555;
+      letter-spacing: 1px;
+    }
+
+    /* Barcode */
+    .barcode-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .barcode {
+      width: 250px;
+      height: 80px;
+      border-radius: 5px;
+      background: #fff;
+      padding: 5px;
+    }
+
+    /* Button Styling */
+    .paid-btn {
+      width: 100%;
+      padding: 15px;
+      background: #27ae60;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .paid-btn:hover {
+      background: #219150;
+      transform: scale(1.05);
+    }
+
+    .paid-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scaleUp {
+      from { transform: scale(0.9); }
+      to { transform: scale(1); }
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Payment Successful</div>
+    <div class="checkmark">&#10004;</div>
+
+    <div class="content">
+      <p>Thank you for your purchase!</p>
+      <p>Your transaction has been completed successfully.</p>
+      <p>Receipt #: <strong id="receipt-number"></strong></p>
+      <p>Date: <span id="transaction-date"></span></p>
+    </div>
+
+    <div class="total">Total: $123.45</div>
+    <div class="payment-info">Visa **** 1234</div>
+
+    <!-- Barcode Container -->
+    <div class="barcode-container">
+      <svg id="barcode" class="barcode"></svg>
+    </div>
+
+    <button class="paid-btn" onclick="closeReceipt()">Done</button>
+  </div>
+
+  <script>
+    // Set current date dynamically
+    document.getElementById("transaction-date").textContent = new Date().toLocaleDateString();
+
+    // Generate a unique receipt number
+    function generateReceiptNumber() {
+      return Math.floor(100000000 + Math.random() * 900000000); // Random 9-digit number
+    }
+    document.getElementById("receipt-number").textContent = generateReceiptNumber();
+
+    // Generate Barcode using JsBarcode
+    function generateBarcode() {
+      let barcodeNumber = generateReceiptNumber().toString();
+      JsBarcode("#barcode", barcodeNumber, {
+        format: "CODE128",
+        lineColor: "#000",
+        width: 2,
+        height: 60,
+        displayValue: true,
+      });
+    }
+
+    // Generate barcode on page load
+    generateBarcode();
+
+    // Simulate closing the receipt (redirect or hide)
+    function closeReceipt() {
+      alert("Transaction Completed. Returning to Home.");
+      window.location.href = "index.html"; // Change this if needed
+    }
+  </script>
+</body>
+</html>
+    

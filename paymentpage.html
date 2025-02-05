@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #8B0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 350px;
+            background: #631717;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .card {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group {
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            color: white;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .pay-btn {
+            width: 100%;
+            padding: 12px;
+            background: red;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Payment Details</div>
+
+        <div class="card">
+            <img src="dbs-vantage-card-square-684x630.webp" alt="DBS Vantage Visa Infinite Card">
+        </div>
+
+        <div class="input-group">
+            <label for="card-type">Select Card Type</label>
+            <select id="card-type">
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Card Number (16 Digits, Format: 4x4x4x4)</label>
+            <input type="text" id="card-number" maxlength="19" placeholder="1234 5678 1234 5678" required oninput="formatCardNumber(this)">
+        </div>
+
+        <div class="input-group">
+            <label>Name</label>
+            <input type="text" value="Sam Louis">
+        </div>
+
+        <div class="input-group">
+            <label>Expiration Date (MM/YY)</label>
+            <input type="text" id="expiry-date" maxlength="5" placeholder="MM/YY" required oninput="formatExpiryDate(this)">
+        </div>
+
+        <div class="input-group">
+            <label>CVV (3 Digits Only)</label>
+            <input type="text" id="cvv" maxlength="3" pattern="\d{3}" placeholder="Enter 3-digit CVV" required oninput="validateCVV(this)">
+        </div>
+
+        <button class="pay-btn" onclick="validateForm()">Pay</button>
+    </div>
+
+    <script>
+        function formatCardNumber(input) {
+            let value = input.value.replace(/\D/g, ''); // Remove non-numeric values
+            value = value.substring(0, 16); // Limit to 16 digits
+
+            let formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 '); // Add spaces every 4 digits
+            input.value = formattedValue;
+        }
+
+        function validateCVV(input) {
+            input.value = input.value.replace(/\D/g, '').slice(0, 3); // Allow only numbers and limit to 3 digits
+        }
+
+        function formatExpiryDate(input) {
+            let value = input.value.replace(/\D/g, '').slice(0, 4); // Remove non-numeric characters
+            if (value.length >= 2) {
+                input.value = value.slice(0, 2) + '/' + value.slice(2); // Format as MM/YY
+            } else {
+                input.value = value; // Keep unformatted if not enough characters
+            }
+        }
+
+        function validateForm() {
+            let cardNumber = document.getElementById("card-number").value.replace(/\s/g, ''); // Remove spaces
+            let expiryDate = document.getElementById("expiry-date").value;
+            let cvv = document.getElementById("cvv").value;
+
+            if (cardNumber.length !== 16) {
+                alert("Card number must be exactly 16 digits!");
+                return;
+            }
+
+            if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
+                alert("Expiration date must be in MM/YY format!");
+                return;
+            }
+
+            if (cvv.length !== 3) {
+                alert("CVV must be exactly 3 digits!");
+                return;
+            }
+
+            window.location.href = 'receipt.html';
+        }
+    </script>
+
+</body>
+</html>

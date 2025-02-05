@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Dashboard</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #6B1C1C;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        header {
+            background: #A21818;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+        }
+
+        .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-icon i {
+            font-size: 22px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            background: white;
+            color: black;
+            padding: 3px 6px;
+            border-radius: 5px;
+        }
+
+        .icons i {
+            font-size: 20px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .pfp {
+            background: white;
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 5px 0;
+        }
+
+        p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .points-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .points, .discount {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .points i, .discount i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        span {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .shop-btn {
+            background: #FFAA00;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .shop-btn:hover {
+            background: #FFCC33;
+        }
+
+        .menu-list {
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .menu-item i {
+            margin-right: 10px;
+        }
+
+        .extra-links {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .toggle {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="menu-icon"><i class="fas fa-bars"></i></div>
+            <div class="logo"> <span>Desk</span>Top</div>
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-card">
+        <div class="profile-image">
+            <div class="pfp">Pfp</div>
+        </div>
+        <h2>AAGWU</h2>
+        <p>Member since 2025</p>
+
+        <div class="points-info">
+            <div class="points">
+                <i class="fas fa-gem"></i>
+                <p>2000<br><span>Desktop Points</span></p>
+            </div>
+            <div class="discount">
+                <i class="fas fa-tag"></i>
+                <p>$20<br><span>Discount can get</span></p>
+            </div>
+        </div>
+
+        <button class="shop-btn">SHOP NOW <br> and get more points</button>
+    </div>
+
+    <div class="menu-list">
+        <div class="menu-item"><i class="fas fa-shopping-cart"></i> My Cart</div>
+        <div class="menu-item"><i class="fas fa-history"></i> Order History</div>
+        <div class="menu-item"><i class="fas fa-cog"></i> Settings</div>
+    </div>
+
+    <div class="extra-links">
+        <p>About us <span class="toggle">+</span></p>
+        <p>Contact</p>
+    </div>
+
+</body>
+</html>
