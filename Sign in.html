@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="body1">
+        <div class="navbar">
+            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+            <span class="logo">DeskTop</span>
+            <div class="icons">
+                <span onclick="toggleSearch()">🔍</span>
+                <span>👤</span>
+                <span>🛒</span>
+            </div>
+        </div>
+    
+        <div class="search-bar" id="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    
+        <div class="menu" id="menu">
+            <a href="#">Home</a>
+            <a href="#">Deal</a>
+            <a href="#">Mouse</a>
+            <a href="#">Keyboard</a>
+            <a href="#">Headphone</a>
+            <a href="#">Microphone</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    
+    
+        <div class="container1">
+            <h2>Welcome Back!</h2>
+            <input type="email" placeholder="Enter your email">
+            <input type="password" placeholder="Enter your password">
+            <button class="login-btn">Login</button>
+            <p>Or With</p>
+            <div class="social-login">Login with Facebook</div>
+            <div class="social-login" style="background:#db4437;">Login with Google</div>
+            <p>Don't have an account? <a href="signin.html" style="color:yellow;">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+
+        function toggleSearch() {
+            const searchBar = document.getElementById('search-bar');
+            searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Enable horizontal scroll using mouse wheel
+        const containers = document.querySelectorAll(".container");
+
+// Loop through each container and add the scroll event listener
+        containers.forEach(container => {
+        container.addEventListener("wheel", (evt) => {
+        evt.preventDefault(); // Prevent default vertical scrolling
+        container.scrollLeft += evt.deltaY * 1.5; // Enable horizontal scrolling
+        });
+});
+    </script>
+</body>
+</html>
