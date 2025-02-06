@@ -1,6 +1,6 @@
 function login() {
-    //Set API key//
-    APIKEY = "67a447880b037f5d6b192c9d"
+    //Get email info//
+    let emailentered= document.getElementById("email").value
 
     //GET code//
     var settings = {
@@ -16,10 +16,10 @@ function login() {
       }
       
       $.ajax(settings).done(function (data) {
-        console.log(data);
       });
 
-      if (data.username == "admin" && data.password == "admin") {
-        window.location.href = "admin.html";
       }
-}
+
+const APIKEY = "67a447880b037f5d6b192c9d"; 
+const APIURL = "https://desktop-87aa.restdb.io/rest/userinfo"; 
+
