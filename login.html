@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Login</title>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="body1">
+
+        <!-- Navbar -->
         <div class="navbar">
             <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
             <span class="logo">DeskTop</span>
@@ -22,6 +26,7 @@
             <input type="text" placeholder="Search...">
         </div>
     
+        <!-- Nav bar info -->
         <div class="menu" id="menu">
             <a href="#">Home</a>
             <a href="#">Deal</a>
@@ -34,12 +39,16 @@
         <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
     
     
+        <!-- Login form -->
         <div class="container1">
+            <!-- Actual login -->
             <h2>Welcome Back!</h2>
             <input type="email" placeholder="Enter your email">
             <input type="password" placeholder="Enter your password">
-            <button class="login-btn">Login</button>
+            <button class="login-btn" onclick="login()">Login</button>
+            
             <p>Or With</p>
+            <!-- Social login buttons -->
             <div class="social-login">Login with Facebook</div>
             <div class="social-login" style="background:#db4437;">Login with Google</div>
             <p>Don't have an account? <a href="signup.html" style="color:yellow;">Sign Up</a></p>
