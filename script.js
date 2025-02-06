@@ -1,27 +1,42 @@
 function login() {
-  const APIKEY = "67a447880b037f5d6b192c9d"; 
-  const APIURL = "https://desktop-87aa.restdb.io/rest/userinfo"; 
-    //Get email info//
-    let emailentered= document.getElementById("email").value
+  const APIKEY = "67a447880b037f5d6b192c9d";
+  const APIURL = "https://desktop-87aa.restdb.io/rest/userinfo";
 
-    let settings = {
-      method: "GET", //[cher] we will use GET to retrieve info
-      headers: {
-        "Content-Type": "application/json",
-        "x-apikey": APIKEY,
-        "Cache-Control": "no-cache"
-      },
-    }
+  // Get email and password inputs
+  let emailEntered = document.getElementById("email").value.trim();
+  let passwordEntered = document.getElementById("password").value.trim();
 
-    //[STEP 8]: Make our AJAX calls
-    // Once we get the response, we modify our table content by creating the content internally. We run a loop to continuously add on data
-    // RESTDb/NoSql always adds in a unique id for each data; we tap on it to have our data and place it into our links 
-    fetch(APIURL, settings)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response);
+  if (!emailEntered || !passwordEntered) {
+    alert("Please enter both email and password.");
+    return;
+  }
 
-        window.location.href = "profile.html"
+  let settings = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "x-apikey": APIKEY,
+      "Cache-Control": "no-cache"
+    },
+  };
 
-      });
-    }
+  fetch(APIURL, settings)
+    .then(response => response.json())
+    .then(users => {
+      console.log(users);
+
+      // Find user in the database
+      let user = users.find(user => user.email === emailEntered && user.password === passwordEntered);
+
+      if (user) {
+        alert("Login successful!");
+        window.location.href = "profile.html";
+      } else {
+        alert("Invalid email or password. Please try again.");
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching user data:", error);
+      alert("An error occurred. Please try again later.");
+    });
+}
