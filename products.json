@@ -1,3 +1,192 @@
 {
-    
-}
+    "categories": [
+      {
+        "name": "Deals",
+        "products": [
+          {
+            "id": 6,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "G703",
+            "price": 44,
+            "discribtion" : "Featuring the advanced HERO 25K gaming sensor for sub-micron tracking and 10x power efficiency over previous generation. Pro-grade LIGHTSPEED wireless delivers ultralow-latency for peak performance.",
+            "image": "G703.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          }
+        ]
+      },
+      {
+        "name": "Mouse",
+        "products": [
+          {
+            "id": 6,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G502 X PLUS GAMING MOUSE",
+            "price": 256,
+            "discribtion" : "G502 X PLUS is the latest addition to legendary G502 lineage. Reinvented with our first-ever LIGHTFORCE hybrid switches, LIGHTSPEED pro-grade wireless, LIGHTSYNC RGB, HERO 25K sensor, and more.",
+            "image": "g502x.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G903 Gaming Mouse",
+            "price": 400,
+            "discribtion" : "Ultimate gaming mouse. Ultralow-latency LIGHTSPEED wireless. HERO 25K sensor achieves sub-micron tracking. Ambidextrous design. Hyper-fast scrollwheel. POWERPLAY compatible for continuous wireless charging.",
+            "image": "G903.webp"
+          },
+          {
+            "id": 20,
+            "name": "G703",
+            "price": 44,
+            "discribtion" : "Featuring the advanced HERO 25K gaming sensor for sub-micron tracking and 10x power efficiency over previous generation. Pro-grade LIGHTSPEED wireless delivers ultralow-latency for peak performance.",
+            "image": "G703.webp"
+          },
+          {
+            "id": 20,
+            "name": "PRO 2 LIGHTSPEED",
+            "price": 44,
+            "discribtion" : "Designed with pros and engineered to win, the Logitech G PRO 2 LIGHTSPEED wireless mouse is an symmetric, ambidextrous mouse with customizable magnetic side buttons that delivers ultra-fast, precise performance and customizable style for competitive gamers.",
+            "image": "PRO 2 LIGHTSPEED.webp"
+          }
+        ]
+      },
+      {
+        "name": "Keyboard",
+        "products": [
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G512 Carbon",
+            "price": 44,
+            "discribtion" : "High-performance gaming keyboard featuring your choice of advanced GX mechanical switches. Includes 1 ms report rate, USB passthrough, LIGHTYSNC RGB, and aluminum-alloy construction.",
+            "image": "G512 Carbon.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G915 X",
+            "price": 44,
+            "discribtion" : "Logitech G915 X delivers iconic speed, accuracy, and customization with a sleek, ultra-thin design. This wired gaming keyboard features KEYCONTROL, GL mechanical switches, and LIGHTSYNC RGB.",
+            "image": "G915 X.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G413",
+            "price": 44,
+            "discribtion" : "Designed for advanced performance with the right feature set. The bladelike chassis is made of high-strength aluminum alloy with USB passthrough, backlit keys, Romer-G tactile mechanical switches, and more.",
+            "image": "G413.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G913 TKL",
+            "price": 44,
+            "discribtion" : "Logitech G913 TKL Tenkeyless LIGHTSPEED Wireless RGB Mechanical Gaming Keyboard",
+            "image": "G913 TKL.webp"
+          }
+        ]
+      },
+      {
+        "name": "Headphone",
+        "products": [
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          }
+        ]
+      },
+      {
+        "name": "Microphone",
+        "products": [
+
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          },
+          {
+            "id": 20,
+            "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
+            "price": 44,
+            "discribtion" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
+            "image": "G304.webp"
+          }
+        ]
+      }
+    ]
+  }
+  
