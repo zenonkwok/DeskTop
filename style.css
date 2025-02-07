@@ -79,7 +79,13 @@ body {
     background-color: #d34524;
     padding: 10px;
     text-align: center;
+    transition: max-height 0.3s ease-in-out;
 }
+
+.search-bar.active {
+    display: block;
+}
+
 
 .search-bar input {
     width: 80%;
@@ -104,7 +110,7 @@ body {
 
 /* Product Card */
 .product-card {
-    background: white;
+    background: #821c17;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -124,34 +130,35 @@ body {
 }
 
 .product-card h3 {
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-.product-card p {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: 10px;
-}
-
-.product-card .price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #d34524;
-}
-
+.product-card p,
+.product-card .price,
 .product-card .buy-button {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #d34524;
-    color: white;
-    border-radius: 5px;
+    display: none; /* Hide price, description, and button on the front page */
+}
+
+/* Style for header container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Style for View More Button */
+.view-more-button {
     text-decoration: none;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 16px;
     transition: 0.3s;
 }
 
-.product-card .buy-button:hover {
-    background-color: #b0321a;
+.view-more-button:hover {
+    color: #ac2d11;
 }
 
 
@@ -199,5 +206,286 @@ input {
     color: white;
     margin-top: 5px;
 }
+.points-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
 
-/* sign up */
+.points, .discount {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.points i, .discount i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.shop-btn {
+    background: #FFAA00;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.shop-btn:hover {
+    background: #FFCC33;
+}
+
+.menu-list {
+    margin-top: 20px;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-item i {
+    margin-right: 10px;
+}
+
+.extra-links {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.toggle {
+    float: right;
+}
+.profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .pfp {
+            background: white;
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 5px 0;
+        }
+
+        p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .points-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .points, .discount {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .points i, .discount i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        span {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .shop-btn {
+            background: #FFAA00;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .shop-btn:hover {
+            background: #FFCC33;
+        }
+
+        .menu-list {
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .menu-item i {
+            margin-right: 10px;
+        }
+
+        .extra-links {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .toggle {
+            float: right;
+        }
+
+
+
+
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .pfp {
+            background: white;
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 5px 0;
+        }
+
+        p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .points-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .points, .discount {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .points i, .discount i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        span {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .shop-btn {
+            background: #FFAA00;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .shop-btn:hover {
+            background: #FFCC33;
+        }
+
+        .menu-list {
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .menu-item i {
+            margin-right: 10px;
+        }
+
+        .extra-links {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .toggle {
+            float: right;
+        }

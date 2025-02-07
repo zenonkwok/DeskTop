@@ -5,60 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Dashboard</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
 
-        body {
-            background: #6B1C1C;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        header {
-            background: #A21818;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 10px;
-        }
-
-        .nav-container {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .menu-icon i {
-            font-size: 22px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            background: white;
-            color: black;
-            padding: 3px 6px;
-            border-radius: 5px;
-        }
-
-        .icons i {
-            font-size: 20px;
-            margin-left: 15px;
-            cursor: pointer;
-        }
 
         .profile-card {
             background: rgba(255, 255, 255, 0.1);
@@ -169,17 +118,31 @@
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="menu-icon"><i class="fas fa-bars"></i></div>
-            <div class="logo"> <span>Desk</span>Top</div>
-            <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-user"></i>
-                <i class="fas fa-shopping-cart"></i>
-            </div>
+    <div class="navbar">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <span class="logo">Desktop Store</span>
+        <div class="icons">
+            <span onclick="toggleSearch()">🔍</span>
+            <span>👤</span>
+            <span>🛒</span>
         </div>
-    </header>
+    </div>
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="menu" id="menu">
+        <a href="">Home</a>
+        <a href="#">Deals</a>
+        <a href="#">Mouse</a>
+        <a href="#">Keyboard</a>
+        <a href="#">Headphone</a>
+        <a href="#">Microphone</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
     <div class="profile-card">
         <div class="profile-image">
