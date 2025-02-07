@@ -25,8 +25,16 @@ function login() {
     .then(users => {
       console.log(users);
 
-      // Find user in the database
-      let user = users.find(user => user.email === emailEntered && user.password === passwordEntered);
+      let user = null;
+
+      // Use a for loop to find the user
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].Email === emailEntered && users[i].Password === passwordEntered) {
+          user = users[i]; 
+          break; // Exit loop once a match is found
+        }
+      }
+      
 
       if (user) {
         alert("Login successful!");
