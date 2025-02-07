@@ -1,44 +1,51 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("products.json")
-        .then(response => response.json())
-        .then(data => {
-            renderProducts(data.categories);
-        })
-        .catch(error => console.error("Error loading JSON:", error));
+    loadProducts();
 });
 
-function renderProducts(categories) {
-    const container = document.getElementById("product-sections");
-    container.innerHTML = "";
-
-    categories.forEach(category => {
-        let section = document.createElement("div");
-        section.classList.add("section");
-        section.innerHTML = `
-            <div class="header">
-                <h2>${category.name}</h2>
-                <a href="#" class="view-all">View All</a>
-            </div>
-            <div class="container">
-                ${category.products.map(product => `
-                    <div class="item">
-                        <img src="${product.image}" alt="${product.name}">
-                        <h3>${product.name}</h3>
-                        <p>$${product.price}</p>
-                    </div>
-                `).join('')}
-            </div>
-        `;
-        container.appendChild(section);
-    });
-}
-
+// Toggle Sidebar Menu
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
-    document.getElementById("overlay").classList.toggle("active");
 }
 
+// Toggle Search Bar
 function toggleSearch() {
-    const searchBar = document.getElementById("search-bar");
-    searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
+    let searchBar = document.getElementById("search-bar");
+    searchBar.style.display = searchBar.style.display === "block" ? "none" : "block";
+}
+
+// Load Products from JSON
+async function loadProducts() {
+    const response = await fetch("products.json"); // Ensure this file is correctly placed
+    const data = await response.json();
+    const sections = document.getElementById("product-sections");
+
+    data.categories.forEach(category => {
+        let section = document.createElement("div");
+        section.classList.add("section");
+
+        let header = document.createElement("div");
+        header.classList.add("header");
+        header.innerHTML = `<h2>${category.name}</h2>`;
+
+        let container = document.createElement("div");
+        container.classList.add("product-container");
+
+        category.products.forEach(product => {
+            let card = document.createElement("div");
+            card.classList.add("product-card");
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.discribtion}</p>
+                <span class="price">$${product.price}</span>
+                <br>
+                <a href="#" class="buy-button">Buy Now</a>
+            `;
+            container.appendChild(card);
+        });
+
+        section.appendChild(header);
+        section.appendChild(container);
+        sections.appendChild(section);
+    });
 }

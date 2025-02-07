@@ -1,17 +1,21 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #3b0a06;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
+
+/* Navigation Bar */
 .navbar {
-    position: relative;
     background-color: #d34524;
-    padding: 15px;
-    text-align: center;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 .menu-icon {
     font-size: 24px;
@@ -74,51 +78,80 @@ body {
     display: none;
     background-color: #d34524;
     padding: 10px;
-    width: 100%;
     text-align: center;
-    position: relative;
-    z-index: 0;
 }
+
 .search-bar input {
-    padding: 10px;
     width: 80%;
+    padding: 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
 }
-.section {
+
+/* Product Section */
+#product-sections {
     padding: 30px;
+}
+
+/* Product Grid */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
-.header h2 {
-    margin: 0;
-}
-/* Horizontal Scroll Styling */
-.container {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 10px;
-    padding: 10px;
-    scroll-behavior: smooth;
-}
-.item {
-    flex-shrink: 0; /* Prevent shrinking */
-}
-.item img {
-    width: 200px;
-    height: 200px;
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
     border-radius: 10px;
 }
-/* Hide Scrollbar */
-.container::-webkit-scrollbar {
-    display: none;
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d34524;
+}
+
+.product-card .buy-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #d34524;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.product-card .buy-button:hover {
+    background-color: #b0321a;
 }
 
 

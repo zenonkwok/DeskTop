@@ -17,11 +17,11 @@
                 <span>🛒</span>
             </div>
         </div>
-    
+
         <div class="search-bar" id="search-bar">
             <input type="text" placeholder="Search...">
         </div>
-    
+
         <div class="menu" id="menu">
             <a href="#">Home</a>
             <a href="#">Deal</a>
@@ -32,15 +32,13 @@
             <a href="#">Contact Us</a>
         </div>
         <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-    
-    
+
         <div class="container1">
             <h2>Create an Account</h2>
-            <input type="text" placeholder="Enter your username">
-            <input type="email" placeholder="Enter your email">
-            <input type="tel" placeholder="Enter your phone number">
-            <input type="password" placeholder="Enter your password">
-            <button class="login-btn">Sign Up</button>
+            <input type="text" id="username" placeholder="Enter your username">
+            <input type="email" id="email" placeholder="Enter your email">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button class="login-btn" onclick="signUp()">Sign Up</button>
             <p>Or With</p>
             <div class="social-login">Signup with Facebook</div>
             <div class="social-login" style="background:#db4437;">Signup with Google</div>
@@ -59,17 +57,46 @@
             searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
         }
 
-        // Enable horizontal scroll using mouse wheel
-        const containers = document.querySelectorAll(".container");
+        function signUp() {
+            const APIKEY = "67a447880b037f5d6b192c9d";
+            const APIURL = "https://desktop-87aa.restdb.io/rest/userinfo";
 
-// Loop through each container and add the scroll event listener
-        containers.forEach(container => {
-        container.addEventListener("wheel", (evt) => {
-        evt.preventDefault(); // Prevent default vertical scrolling
-        container.scrollLeft += evt.deltaY * 1.5; // Enable horizontal scrolling
-        });
-});
+            let username = document.getElementById("username").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (!username || !email || !password) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            let userData = {
+                username: Username,
+                email: Email,
+                password: Password
+            };
+
+            let settings = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-apikey": APIKEY,
+                    "Cache-Control": "no-cache"
+                },
+                body: JSON.stringify(userData)
+            };
+
+            fetch(APIURL, settings)
+                .then(response => response.json())
+                .then(data => {
+                    alert("Account created successfully!");
+                    window.location.href = "login.html"; // Redirect to login page
+                })
+                .catch(error => {
+                    console.error("Error creating account:", error);
+                    alert("An error occurred. Please try again.");
+                });
+        }
     </script>
 </body>
 </html>
-      
