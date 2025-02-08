@@ -1,33 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-    loadProducts();
-});
-
-// Toggle Sidebar Menu
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
     document.getElementById("overlay").classList.toggle("active");
 }
 
-// Toggle Search Bar
 function toggleSearch() {
     let searchBar = document.getElementById("search-bar");
     searchBar.classList.toggle("active");
 }
+document.addEventListener("DOMContentLoaded", function () {
+    loadProducts();
+});
 
-// Load Products from JSON
 async function loadProducts() {
     try {
         const response = await fetch("products.json");
         if (!response.ok) throw new Error("Failed to load products.");
 
         const data = await response.json();
-        const sections = document.getElementById("product-sections");
+        console.log("Products Loaded:", data);
 
+        const sections = document.getElementById("product-sections");
+        if (!sections) {
+            console.error("Error: #product-sections not found in the DOM.");
+            return;
+        }
+        
+        sections.innerHTML = ""; // Clear existing content
+        
         data.categories.forEach((category) => {
             let section = document.createElement("div");
             section.classList.add("section");
 
-            // Header with View More Button
             let headerContainer = document.createElement("div");
             headerContainer.classList.add("header-container");
 
@@ -45,18 +48,17 @@ async function loadProducts() {
             let container = document.createElement("div");
             container.classList.add("product-container");
 
-            // Display only the first 3 products (image + name only)
             category.products.slice(0, 3).forEach(product => {
                 let card = document.createElement("div");
                 card.classList.add("product-card");
                 card.innerHTML = `
                     <img src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
+                    <p>Price: $${product.price}</p>
                 `;
 
                 card.addEventListener('click', () => {
-                    localStorage.setItem('cardclicked', product .id); // Save product ID to localStorage
-                    window.location.href = 'itemdetail.html'; // Navigate to card.html
+                    window.location.href = `itemdetail.html?id=${product.id}`;
                 });
 
                 container.appendChild(card);
@@ -68,39 +70,19 @@ async function loadProducts() {
         });
     } catch (error) {
         console.error("Error loading products:", error);
-
-        const sections = document.getElementById("product-sections");
-        sections.innerHTML = `<p style="color: red;">Failed to load products. Please try again later.</p>`;
     }
-    category.products.forEach(product => {
-        let card = document.createElement("div");
-        card.classList.add("product-card");
-        card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>Price: $${product.price}</p>
-        `;
-    
-        // Redirect to itemdetail.html with product id in the URL
-        card.addEventListener('click', () => {
-            window.location.href = `itemdetail.html?id=${product.id}`;  // Pass product id as query parameter
-        });
-    
-        container.appendChild(card);
-    });
 }
 
-// Call the function to load products
-loadProducts();
+// Load product details if available
+async function loadProductDetails() {
+    const productDetailContainer = document.querySelector('.product-detail');
+    if (!productDetailContainer) return;
 
-
-document.addEventListener('DOMContentLoaded', async () => {
-    // Get the 'id' parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
 
     if (!productId) {
-        document.querySelector('.product-detail').innerHTML = '<p>Product not found.</p>';
+        productDetailContainer.innerHTML = '<p>Product not found.</p>';
         return;
     }
 
@@ -111,29 +93,38 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = await response.json();
         let product = null;
 
-        // Search for the product by ID in all categories
         for (const category of data.categories) {
             product = category.products.find(p => p.id == productId);
             if (product) break;
         }
 
         if (product) {
-            // Populate the HTML with product details
-            document.getElementById('product-image').src = product.image;
-            document.getElementById('product-name').textContent = product.name;
-            document.getElementById('product-price').textContent = `Price: $${product.price}`;
-            document.getElementById('product-description').textContent = product.description || product.discribtion;
+            const productImage = document.getElementById("product-image");
+            const productName = document.getElementById("product-name");
+            const productPrice = document.getElementById("product-price");
+            const productDescription = document.getElementById("product-description");
+            const addToCart = document.getElementById("add-to-cart");
 
-            document.getElementById('add-to-cart').addEventListener('click', () => {
+            if (!productImage || !productName || !productPrice || !productDescription || !addToCart) {
+                console.error("Error: One or more product detail elements not found in the DOM.");
+                return;
+            }
+
+            productImage.src = product.image;
+            productName.textContent = product.name;
+            productPrice.textContent = `Price: $${product.price}`;
+            productDescription.textContent = product.description || "No description available.";
+
+            addToCart.addEventListener("click", () => {
                 alert(`${product.name} has been added to your cart!`);
-                // Add cart functionality here
             });
         } else {
-            document.querySelector('.product-detail').innerHTML = '<p>Product not found.</p>';
+            productDetailContainer.innerHTML = '<p>Product not found.</p>';
         }
     } catch (error) {
         console.error("Error loading product details:", error);
-        document.querySelector('.product-detail').innerHTML = '<p>Error loading product details. Please try again later.</p>';
+        productDetailContainer.innerHTML = '<p>Error loading product details. Please try again later.</p>';
     }
-});
+}
 
+document.addEventListener("DOMContentLoaded", loadProductDetails);
