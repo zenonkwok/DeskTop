@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <span class="logo">DeskTop</span>
+        <div class="icons">
+            <span>🔍</span>
+            <span>👤</span>
+            <span>🛒 <span class="cart-count">0</span></span>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <div class="product-detail">
+        <div class="main-image">
+            <img id="product-image" src="" alt="Product Image">
+        </div>
+        <h2 id="product-name">Product Name</h2>
+        <p id="product-price">Price: $0.00</p>
+        <button id="add-to-cart">Add to cart</button>
+        <div class="description">
+            <h3>Description</h3>
+            <p id="product-description">Product description will be here.</p>
+        </div>
+    </div>
+
+    <script src="product-detail.js"></script>
+</body>
+</html>
