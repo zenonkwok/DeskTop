@@ -8,12 +8,12 @@
 </head>
 <body>
     <div class="navbar">
-        <span class="menu-icon">&#9776;</span>
-        <span class="logo">DeskTop</span>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <span class="logo">Desktop Store</span>
         <div class="icons">
-            <span>🔍</span>
-            <span>👤</span>
-            <span>🛒</span>
+            <span onclick="toggleSearch()">🔍</span>
+            <a href="login.html" class="cart-icon">👤</a>
+            <a href="kart.html" class="cart-icon">🛒</a>
         </div>
     </div>
 
@@ -28,10 +28,9 @@
         </div>
 
         <div class="cart-actions">
-            <button class="checkout-btn">Checkout</button>
-            <button class="continue-btn">Continue Shopping</button>
+            <button class="checkout-btn" onclick="window.location.href='payment.html'">Checkout</button>
+            <button class="continue-btn" onclick="window.location.href='index.html'">Continue Shopping</button>
         </div>
-    </div>
 
     <script src="sc2.js"></script>
 </body>

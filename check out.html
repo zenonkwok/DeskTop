@@ -151,59 +151,60 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">Payment Successful</div>
-    <div class="checkmark">&#10004;</div>
+  <div class =></div>
+    <div class="container">
+      <div class="header">Payment Successful</div>
+      <div class="checkmark">&#10004;</div>
 
-    <div class="content">
-      <p>Thank you for your purchase!</p>
-      <p>Your transaction has been completed successfully.</p>
-      <p>Receipt #: <strong id="receipt-number"></strong></p>
-      <p>Date: <span id="transaction-date"></span></p>
+      <div class="content">
+        <p>Thank you for your purchase!</p>
+        <p>Your transaction has been completed successfully.</p>
+        <p>Receipt #: <strong id="receipt-number"></strong></p>
+        <p>Date: <span id="transaction-date"></span></p>
+      </div>
+
+      <div class="total">Total: $123.45</div>
+      <div class="payment-info">Visa **** 1234</div>
+
+      <!-- Barcode Container -->
+      <div class="barcode-container">
+        <svg id="barcode" class="barcode"></svg>
+      </div>
+
+      <button class="paid-btn" onclick="closeReceipt()">Done</button>
     </div>
 
-    <div class="total">Total: $123.45</div>
-    <div class="payment-info">Visa **** 1234</div>
+    <script>
+      // Set current date dynamically
+      document.getElementById("transaction-date").textContent = new Date().toLocaleDateString();
 
-    <!-- Barcode Container -->
-    <div class="barcode-container">
-      <svg id="barcode" class="barcode"></svg>
-    </div>
+      // Generate a unique receipt number
+      function generateReceiptNumber() {
+        return Math.floor(100000000 + Math.random() * 900000000); // Random 9-digit number
+      }
+      document.getElementById("receipt-number").textContent = generateReceiptNumber();
 
-    <button class="paid-btn" onclick="closeReceipt()">Done</button>
-  </div>
+      // Generate Barcode using JsBarcode
+      function generateBarcode() {
+        let barcodeNumber = generateReceiptNumber().toString();
+        JsBarcode("#barcode", barcodeNumber, {
+          format: "CODE128",
+          lineColor: "#000",
+          width: 2,
+          height: 60,
+          displayValue: true,
+        });
+      }
 
-  <script>
-    // Set current date dynamically
-    document.getElementById("transaction-date").textContent = new Date().toLocaleDateString();
+      // Generate barcode on page load
+      generateBarcode();
 
-    // Generate a unique receipt number
-    function generateReceiptNumber() {
-      return Math.floor(100000000 + Math.random() * 900000000); // Random 9-digit number
-    }
-    document.getElementById("receipt-number").textContent = generateReceiptNumber();
-
-    // Generate Barcode using JsBarcode
-    function generateBarcode() {
-      let barcodeNumber = generateReceiptNumber().toString();
-      JsBarcode("#barcode", barcodeNumber, {
-        format: "CODE128",
-        lineColor: "#000",
-        width: 2,
-        height: 60,
-        displayValue: true,
-      });
-    }
-
-    // Generate barcode on page load
-    generateBarcode();
-
-    // Simulate closing the receipt (redirect or hide)
-    function closeReceipt() {
-      alert("Transaction Completed. Returning to Home.");
-      window.location.href = "index.html"; // Change this if needed
-    }
-  </script>
+      // Simulate closing the receipt (redirect or hide)
+      function closeReceipt() {
+        alert("Transaction Completed. Returning to Home.");
+        window.location.href = "index.html"; // Change this if needed
+      }
+    </script>
 </body>
 </html>
     

@@ -59,17 +59,9 @@ body {
 .menu a:hover {
     background-color: #e8a064;
 }
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-.overlay.active {
-    display: block;
-}
+
+
+
 .view-all {
     color: red;
     text-decoration: none;
@@ -669,3 +661,96 @@ span {
         line-height: 1.5;
     }
     
+    /* Cate*/
+
+    
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  /* Two columns */
+        grid-template-rows: repeat(2, auto);   /* Two rows (adjust height automatically) */
+        gap: 20px;
+        padding: 20px;
+    }
+    /* Cate*/
+    .cart-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+    
+    h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    
+    #cart-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center the image and text vertically */
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    #cart-items img {
+        max-width: 150px;
+        height: auto;
+        margin: 10px auto; /* Center horizontally with spacing */
+        display: block;
+    }
+    .cart-item {
+        display: flex;
+        flex-direction: column;  /* Stack the image and text vertically */
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cart-total {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    
+    .cart-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .checkout-btn, .continue-btn {
+        padding: 15px 30px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 150px;
+    }
+    
+    .checkout-btn {
+        background-color: #28a745;
+        color: white;
+    }
+    
+    .checkout-btn:hover {
+        background-color: #218838;
+    }
+    
+    .continue-btn {
+        background-color: #ffc107;
+        color: black;
+    }
+    
+    .continue-btn:hover {
+        background-color: #e0a800;
+    }   
+    #cart-items img {
+    max-width: 150px; /* Set a maximum width */
+    height: auto;     /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-right: 15px; /* Add some spacing */
+    display: block;
+}
