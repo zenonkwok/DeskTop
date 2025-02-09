@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #400000;
+            color: white;
+        }
+        .header {
+            background-color: #D44620;
+            padding: 15px;
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .item {
+            background-color: #6A1B1A;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 48%;
+            min-width: 400px; /* Ensures proper sizing on smaller screens */
+        }
+
+        iframe {
+            width: 100%;
+            height: 50vh; /* Adjusted height to be more dynamic */
+            border-radius: 5px;
+        }
+
+        .title {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <span class="logo">Desktop Store</span>
+        <div class="icons">
+            <span onclick="toggleSearch()">🔍</span>
+            <a href="login.html" class="cart-icon">👤</a>
+            <a href="kart.html" class="cart-icon">🛒</a>
+        </div>
+    </div>
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="category.html?category=Deals">Deals</a>
+        <a href="category.html?category=Mouse">Mouse</a>
+        <a href="category.html?category=Keyboard">Keyboard</a>
+        <a href="category.html?category=Headphone">Headphone</a>
+        <a href="category.html?category=Microphone">Microphone</a>
+        <a href="3df.html">3d galary</a>
+    </div>
+    <div class="gallery">
+        <div class="item">
+            <iframe title="ms_low" src="https://sketchfab.com/models/01c69e993fb64dd788930d54071972a7/embed" allowfullscreen></iframe>
+            <div class="title">ms_low</div>
+        </div>
+        <div class="item">
+            <iframe title="Split Ergonomic Mechanical Keyboard" src="https://sketchfab.com/models/e5c21043a50d42e593f4259ea2424d87/embed" allowfullscreen></iframe>
+            <div class="title">Split Ergonomic Mechanical Keyboard</div>
+        </div>
+    </div>
+    <script src="sc2.js"></script>
+</body>
+</html>
