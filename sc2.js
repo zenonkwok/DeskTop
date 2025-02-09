@@ -128,3 +128,36 @@ async function loadProductDetails() {
 }
 
 document.addEventListener("DOMContentLoaded", loadProductDetails);
+
+async function loadCategoryProducts() {
+    try {
+        const response = await fetch("products.json");
+        if (!response.ok) throw new Error("Failed to load products.");
+
+        const data = await response.json();
+        const category = "Keyboard";  // Set the current category name
+        const productGrid = document.querySelector(".product-grid");
+
+        const categoryData = data.categories.find(cat => cat.name === category);
+        if (!categoryData) {
+            productGrid.innerHTML = "<p>No products found in this category.</p>";
+            return;
+        }
+
+        categoryData.products.forEach(product => {
+            const productCard = document.createElement("div");
+            productCard.classList.add("product-card");
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>Price: $${product.price}</p>
+            `;
+
+            productGrid.appendChild(productCard);
+        });
+    } catch (error) {
+        console.error("Error loading category products:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadCategoryProducts);
