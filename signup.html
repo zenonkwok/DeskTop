@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Sign Up</title>
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Product Store</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="body2">
-        <div class="navbar">
-            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-            <span class="logo">DeskTop</span>
-            <div class="icons">
-                <span onclick="toggleSearch()">🔍</span>
-                <span>👤</span>
-                <span>🛒</span>
-            </div>
+    <div class="navbar">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <span class="logo">Desktop Store</span>
+        <div class="icons">
+            <span onclick="toggleSearch()">🔍</span>
+            <span>👤</span>
+            <span>🛒</span>
         </div>
+    </div>
 
-        <div class="search-bar" id="search-bar">
-            <input type="text" placeholder="Search...">
-        </div>
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
 
-        <div class="menu" id="menu">
-            <a href="#">Home</a>
-            <a href="#">Deal</a>
-            <a href="#">Mouse</a>
-            <a href="#">Keyboard</a>
-            <a href="#">Headphone</a>
-            <a href="#">Microphone</a>
-            <a href="#">Contact Us</a>
-        </div>
+    <div class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="category.html?category=Deals">Deals</a>
+        <a href="category.html?category=Mouse">Mouse</a>
+        <a href="category.html?category=Keyboard">Keyboard</a>
+        <a href="category.html?category=Headphone">Headphone</a>
+        <a href="category.html?category=Microphone">Microphone</a>
+    </div>
         <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
         <div class="container1">

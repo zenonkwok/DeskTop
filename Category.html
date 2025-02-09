@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category - Keyboard</title>
+    <title>Product Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navbar">
         <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-        <span class="logo">DeskTop</span>
+        <span class="logo">Desktop Store</span>
         <div class="icons">
-            <span>🔍</span>
+            <span onclick="toggleSearch()">🔍</span>
             <span>👤</span>
-            <span>🛒 <span class="cart-count">0</span></span>
+            <span>🛒</span>
         </div>
     </div>
 
-    <h1 class="category-title">Keyboard</h1>
-
-    <div class="product-grid">
-        <!-- Example Product Cards -->
-        <div class="product-card">
-            <img src="keyboard1.jpg" alt="Keyboard 1">
-            <h3>Keyboard Model 1</h3>
-            <p>Price: $100</p>
-        </div>
-        <div class="product-card">
-            <img src="keyboard2.jpg" alt="Keyboard 2">
-            <h3>Keyboard Model 2</h3>
-            <p>Price: $120</p>
-        </div>
-        <!-- Add more product cards dynamically -->
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
     </div>
+
+    <div class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="category.html?category=Deals">Deals</a>
+        <a href="category.html?category=Mouse">Mouse</a>
+        <a href="category.html?category=Keyboard">Keyboard</a>
+        <a href="category.html?category=Headphone">Headphone</a>
+        <a href="category.html?category=Microphone">Microphone</a>
+    </div>
+
+    <h1 class="category-title">Loading Category...</h1>
+
+    <div class="product-grid"></div>
 
     <script src="sc2.js"></script>
 </body>

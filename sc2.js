@@ -7,8 +7,15 @@ function toggleSearch() {
     let searchBar = document.getElementById("search-bar");
     searchBar.classList.toggle("active");
 }
+
 document.addEventListener("DOMContentLoaded", function () {
-    loadProducts();
+    if (document.getElementById("product-sections")) {
+        loadProducts();  // Load products on main page
+    } else if (document.querySelector('.product-detail')) {
+        loadProductDetails();  // Load product details on product detail page
+    } else if (document.querySelector('.product-category')) {
+        Viewmore();  // Load products for a specific category
+    }
 });
 
 async function loadProducts() {
@@ -24,7 +31,7 @@ async function loadProducts() {
             console.error("Error: #product-sections not found in the DOM.");
             return;
         }
-        
+
         sections.innerHTML = ""; // Clear existing content
         
         data.categories.forEach((category) => {
@@ -73,7 +80,6 @@ async function loadProducts() {
     }
 }
 
-// Load product details if available
 async function loadProductDetails() {
     const productDetailContainer = document.querySelector('.product-detail');
     if (!productDetailContainer) return;
@@ -127,37 +133,52 @@ async function loadProductDetails() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadProductDetails);
+document.addEventListener("DOMContentLoaded", loadCategoryPage);
 
-async function loadCategoryProducts() {
+async function loadCategoryPage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let categoryName = urlParams.get('category');
+
+    if (!categoryName) {
+        document.querySelector('.category-title').textContent = "Category not specified.";
+        console.error("Category not specified in the URL.");
+        return;
+    }
+
+    categoryName = categoryName.trim().toLowerCase();  // Clean and normalize the category name
+
     try {
         const response = await fetch("products.json");
-        if (!response.ok) throw new Error("Failed to load products.");
+        if (!response.ok) throw new Error("Failed to load products.json.");
 
         const data = await response.json();
-        const category = "Keyboard";  // Set the current category name
-        const productGrid = document.querySelector(".product-grid");
+        const categoryData = data.categories.find(cat => cat.name.toLowerCase() === categoryName);
 
-        const categoryData = data.categories.find(cat => cat.name === category);
+        const productGrid = document.querySelector('.product-grid');
+        productGrid.innerHTML = '';  // Clear any previous content
+
         if (!categoryData) {
-            productGrid.innerHTML = "<p>No products found in this category.</p>";
+            document.querySelector('.category-title').textContent = "Category Not Found";
+            productGrid.innerHTML = '<p>No products found in this category.</p>';
+            console.warn(`Category "${categoryName}" not found in the products.json.`);
             return;
         }
 
+        document.querySelector('.category-title').textContent = categoryData.name;
+
         categoryData.products.forEach(product => {
-            const productCard = document.createElement("div");
-            productCard.classList.add("product-card");
+            let productCard = document.createElement('div');
+            productCard.classList.add('product-card');
             productCard.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p>Price: $${product.price}</p>
             `;
-
             productGrid.appendChild(productCard);
         });
     } catch (error) {
         console.error("Error loading category products:", error);
+        document.querySelector('.product-grid').innerHTML = '<p>Error loading products. Please try again later.</p>';
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadCategoryProducts);
