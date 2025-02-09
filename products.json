@@ -183,14 +183,14 @@
           "name": "JBL Quantum",
           "price": 44,
           "description" : "Make your gaming, streaming, and conferencing amazing. The high sampling rate and 14mm dual condenser of the JBL Quantum Stream ensure your voice will always come through loud and clear with zero background noise—or switch back and forth between pick-up patterns when you do want to capture the sounds around you. Need a quick break? Mute and unmute with the tap of a button and an RGB ring indicator will change color, so you'll always know when you can be heard. Wherever you are, three setting options and a reversible stand make it easy to mount your microphone however you want for simple, seamless plug-and-play communication.",
-          "image": "pictures/JBL Quantum.avif"
+          "image": "pictures/JBL Quantum.png"
         },
         {
           "id": 24,
           "name": "Razer Seiren V3 Chroma",
           "price": 195,
           "description" : "Be seen and heard on new level with the Razer Seiren V3 Chroma—a pro-grade USB mic with RGB lighting customization that outshines all others. Featuring stream reactive lighting and a multi-function tap-to-mute sensor, get the control, clarity, and flair you need for gaming, streaming, and chatting.",
-          "image": "Razer Seiren V3 Chroma.jpg"
+          "image": "pictures/Razer Seiren V3 Chroma.png"
         }
       ]
     }
