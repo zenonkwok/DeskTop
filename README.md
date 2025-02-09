@@ -1,4 +1,7 @@
 # DeskTop
+
+Github repository: https://github.com/zenonkwok/DeskTop
+
 Integrated Studio Project
 \S
 Product Store
