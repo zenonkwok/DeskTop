@@ -7,36 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar -->
     <div class="navbar">
         <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
         <span class="logo">Desktop Store</span>
         <div class="icons">
             <span onclick="toggleSearch()">🔍</span>
             <span>👤</span>
-            <span>🛒</span>
+            <a href="kart.html" class="cart-icon">🛒</a>
         </div>
     </div>
 
-    <div class="search-bar" id="search-bar">
+    <!-- Search Bar -->
+    <div class="search-bar" id="search-bar" style="display: none;">
         <input type="text" placeholder="Search...">
     </div>
 
-    <div class="menu" id="menu">
+    <!-- Side Menu -->
+    <div class="menu" id="menu" style="display: none;">
         <a href="index.html">Home</a>
         <a href="category.html?category=Deals">Deals</a>
         <a href="category.html?category=Mouse">Mouse</a>
-        <a href="category.htl?category=Keyboard">Keyboard</a>
-        <a href="category.html?category=Headmphone">Headphone</a>
+        <a href="category.html?category=Keyboard">Keyboard</a>
+        <a href="category.html?category=Headphone">Headphone</a>
         <a href="category.html?category=Microphone">Microphone</a>
     </div>
+
     <!-- Product Detail Section -->
     <div class="product-detail">
         <div class="main-image">
-            <img id="product-image" src="" alt="Product Image">
+            <img id="product-image" src="default-product.jpg" alt="Product Image">
         </div>
         <h2 id="product-name">Product Name</h2>
         <p id="product-price">Price: $0.00</p>
-        <button id="add-to-cart">Add to cart</button>
+        <button id="add-to-cart">Add to Cart</button>
         <div class="description">
             <h3>Description</h3>
             <p id="product-description">Product description will be here.</p>
@@ -44,5 +48,6 @@
     </div>
 
     <script src="sc2.js"></script>
+
 </body>
 </html>
