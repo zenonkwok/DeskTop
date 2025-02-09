@@ -8,14 +8,14 @@
           "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
           "price": 44,
           "description" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
-          "image": "pictures/G304.webp"
+          "image": "pictures/G304.png"
         },
         {
           "id": 2,
-          "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
-          "price": 400,
-          "description" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
-          "image": "pictures/G304.webp"
+          "name": "MechsForAll Alice V2",
+          "price": 120,
+          "description" : "Split ergonomic alice style keyboard. The next generation of the original beloved MechsForAll Alice. Available in a variety of colors and switch options.",
+          "image": "pictures/alicev2.png"
         },
         {
           "id": 3,
@@ -48,7 +48,7 @@
           "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
           "price": 44,
           "description" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
-          "image": "pictures/G304.webp"
+          "image": "pictures/G304.png"
         },
         {
           "id": 7,
@@ -85,10 +85,10 @@
       "products": [
         {
           "id": 11,
-          "name": "Logitech G304 LightSpeed Wireless Gaming Mouse",
-          "price": 44,
-          "description" : "LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations. Impressive 250-hour battery life. Now in a variety of vibrant colors.",
-          "image": "pictures/G304.webp"
+          "name": "MechsForAll Alice V2",
+          "price": 120,
+          "description" : "Split ergonomic alice style keyboard. The next generation of the original beloved MechsForAll Alice. Available in a variety of colors and switch options.",
+          "image": "pictures/alicev2.png"
         },
         {
           "id": 12,
@@ -183,7 +183,7 @@
           "name": "JBL Quantum",
           "price": 44,
           "description" : "Make your gaming, streaming, and conferencing amazing. The high sampling rate and 14mm dual condenser of the JBL Quantum Stream ensure your voice will always come through loud and clear with zero background noise—or switch back and forth between pick-up patterns when you do want to capture the sounds around you. Need a quick break? Mute and unmute with the tap of a button and an RGB ring indicator will change color, so you'll always know when you can be heard. Wherever you are, three setting options and a reversible stand make it easy to mount your microphone however you want for simple, seamless plug-and-play communication.",
-          "image": "pictures/JBL Quantum.avif.avif"
+          "image": "pictures/JBL Quantum.avif"
         },
         {
           "id": 24,
